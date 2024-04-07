@@ -2,8 +2,10 @@ import GitHub from '@mui/icons-material/GitHub'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
+import Link from '@mui/material/Link'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
+import Grid from '@mui/material/Unstable_Grid2/Grid2'
 
 import { settings } from '@/app/settings'
 import Gallery from './components/Gallery'
@@ -34,23 +36,68 @@ export default function Home() {
 
       <Box
         sx={{
-          backgroundColor: 'rgba(255,255,255,.1)',
-          maxWidth: '42rem',
+          // backgroundColor: 'rgba(255,255,255,.1)',
+          backgroundColor: 'secondary.900',
+          maxWidth: '60rem',
           border: '1px dashed rgba(255,255,255,.5)',
           margin: '4rem auto 0',
-          padding: '2rem',
-          width: '80%',
+          padding: '1rem',
+          // width: '80%',
           display: 'flex',
           flexDirection: 'column',
         }}
       >
-        <Typography textAlign="center" variant="h5" component="h3">
+        <Typography
+          textAlign="center"
+          variant="h5"
+          component="h3"
+          mb={2}
+          textTransform={'uppercase'}
+        >
           Technologies used:
         </Typography>
-        <Box sx={{ display: 'flex', gap: '1rem', margin: '1.5rem auto 0' }}>
+
+        <Grid container columnSpacing={{ xs: 2, md: 3, lg: 3 }}>
+          <Grid xs={12} sm={6} lg={3}>
+            <Typography variant="h6" component="h3">
+              Material UI
+            </Typography>
+            <Typography paragraph>
+              Leveraged the latest Material UI version for the project's core UI
+              components.
+            </Typography>
+          </Grid>
+          <Grid xs={12} sm={6} lg={3}>
+            <Typography variant="h6" component="h3">
+              Next.js
+            </Typography>
+            <Typography paragraph>
+              Utilized for server-side prefetching, data aggregation, and API
+              data caching through its app router.
+            </Typography>
+          </Grid>
+          <Grid xs={12} sm={6} lg={3}>
+            <Typography variant="h6" component="h3">
+              Flickr API
+            </Typography>
+            <Typography paragraph>
+              Integrated with 7 REST endpoints due to the absence of GraphQL
+              support to structure and fetch required data.
+            </Typography>
+          </Grid>
+          <Grid xs={12} sm={6} lg={3}>
+            <Typography variant="h6" component="h3">
+              CI/CD
+            </Typography>
+            <Typography paragraph>
+              Vercel automated deployments with GitHub integration, following a
+              mainline branching strategy
+            </Typography>
+          </Grid>
+        </Grid>
+
+        {/* <Box sx={{ display: 'flex', gap: '1rem', margin: '1.5rem auto 0' }}>
           {settings?.stack.map((tech: { [key: string]: string }, i: number) => {
-            const [techName] = Object.keys(tech)
-            const [techUrl] = Object.values(tech)
             const [name, url]: [string, string] = Object.entries(tech)[0]
             return (
               <Chip
@@ -66,8 +113,26 @@ export default function Home() {
               />
             )
           })}
-        </Box>
+        </Box> */}
+        <Typography
+          paragraph
+          marginTop={6}
+          m={'2rem auto 0'}
+          textAlign={'center'}
+          maxWidth={'40rem'}
+        >
+          The code is available on{' '}
+          <Link
+            href="https://github.com/freeotoole/material-flickr-feed"
+            color={'primary.100'}
+          >
+            Github
+          </Link>{' '}
+          if you'd like to check it out <br />
+          (yep, that was a git pun)
+        </Typography>
       </Box>
+
       <Gallery />
     </Box>
   )

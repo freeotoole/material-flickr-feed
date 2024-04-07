@@ -124,7 +124,7 @@ const Gallery = (props: GalleryProps) => {
             ))}
         </Masonry>
       </Box>
-      <Box ref={ref} p={4} mb={4}>
+      <Box ref={ref} p={4} mb={4} display={'flex'}>
         {isLastPage ? (
           <Box
             sx={{
@@ -132,17 +132,18 @@ const Gallery = (props: GalleryProps) => {
               alignItems: 'center',
               justifyItems: 'center',
               gap: '.5rem',
+              margin: '0 auto',
             }}
           >
             <SentimentDissatisfiedIcon sx={{ fontSize: 48 }} />
-            <Typography variant="h6" component="h6" align="center">
+            <Typography variant="h6" component="h6">
               No more photos here!
             </Typography>
           </Box>
         ) : (
           <>
             {loading && (
-              <Box sx={{ display: 'flex', padding: '1rem 0' }}>
+              <Box sx={{ display: 'flex', margin: '1rem auto' }}>
                 <CircularProgress sx={{ margin: '0 auto' }} />
               </Box>
             )}
