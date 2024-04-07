@@ -20,7 +20,27 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Connecting to Flickr
+
+This project requires the following environment variables to connect to Flickr's API:
+
+- `NEXT_PUBLIC_API_BASE_URL`: The base URL for the Flickr API. This should be set to `https://www.flickr.com/services/rest/`.
+- `API_KEY`: Your Flickr API key. This is used to authenticate requests to the Flickr API.
+- `USER_ID`: The user ID of your Flickr account. This is used to fetch photos from your Flickr account.
+
+You can set these environment variables in a `.env` file in the root of your project. Here's an example:
+
+```bash
+NEXT_PUBLIC_API_BASE_URL=https://www.flickr.com/services/rest/
+API_KEY=your_flickr_api_key
+USER_ID=your_flickr_user_id
+```
+
+## Learn More about the Flickr API
+
+[Flickr API Documentation](https://www.flickr.com/services/developer/api) - Request an API key and learn about the methods and feeds available
+
+## Learn More about Next
 
 To learn more about Next.js, take a look at the following resources:
 
