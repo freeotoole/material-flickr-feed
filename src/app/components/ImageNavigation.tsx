@@ -2,12 +2,8 @@
 
 import { useCallback, useEffect } from 'react'
 import { ArrowBack, ArrowForward } from '@mui/icons-material'
-import Button from '@mui/material/Button'
 import Link from '@mui/material/Link'
-import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import Stack from '@mui/material/Stack'
 import NextLink from 'next/link'
