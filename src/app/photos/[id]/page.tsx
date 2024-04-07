@@ -17,7 +17,9 @@ export default async function PhotoPage({ params }: { params: Params }) {
         overflow: 'hidden',
       }}
     >
-      <SinglePhoto params={params} />
+      <>
+        <SinglePhoto params={params} />
+      </>
     </Box>
   )
 }

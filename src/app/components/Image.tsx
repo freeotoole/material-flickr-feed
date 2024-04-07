@@ -8,7 +8,6 @@ import NextImage from 'next/image'
 
 export type ImageProps = {
   alt: string
-  className?: string
   hover?: boolean
   lazy?: boolean
   sizes?: string
@@ -64,11 +63,6 @@ const Image = (props: ImageProps) => {
           sizes={props.sizes}
           quality={quality}
         />
-        {/* {props.hover && (
-          <figcaption aria-hidden="true">
-            <span className="text-sm uppercase ">{props.alt}</span>
-          </figcaption>
-        )} */}
       </Box>
     </>
   )

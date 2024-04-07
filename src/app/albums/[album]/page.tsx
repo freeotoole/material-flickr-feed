@@ -8,9 +8,5 @@ interface Params {
 export default async function AlbumsPage({ params }: { params: Params }) {
   const albumId = settings.albums[params.album]?.id
 
-  return (
-    <div className="">
-      <Gallery album={params.album} />
-    </div>
-  )
+  return <Gallery album={params.album} />
 }

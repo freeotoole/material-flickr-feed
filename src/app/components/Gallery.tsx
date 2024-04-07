@@ -133,7 +133,6 @@ const Gallery = (props: GalleryProps) => {
               justifyItems: 'center',
               gap: '.5rem',
             }}
-            className="flex items-center justify-center gap-2"
           >
             <SentimentDissatisfiedIcon sx={{ fontSize: 48 }} />
             <Typography variant="h6" component="h6" align="center">
