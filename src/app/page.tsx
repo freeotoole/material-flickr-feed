@@ -36,8 +36,9 @@ export default function Home() {
         sx={{
           // backgroundColor: 'rgba(255,255,255,.1)',
           backgroundColor: 'secondary.900',
+          outlineOffset: '4px',
           maxWidth: '60rem',
-          border: '1px dashed rgba(255,255,255,.5)',
+          outline: '2px dashed rgba(255,255,255,.35)',
           margin: '4rem auto 0',
           padding: '1rem',
           // width: '80%',
