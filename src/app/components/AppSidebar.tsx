@@ -62,10 +62,10 @@ export default function AppSidebar({ drawerWidth }: { drawerWidth: number }) {
         anchor="left"
       >
         <Toolbar sx={{ gap: '.5rem', marginLeft: 'auto', marginRight: 'auto' }}>
-          <Camera color="primary" />
+          <Camera color="secondary" />
           <Typography
             variant="h6"
-            color={'primary'}
+            color={'white'}
             noWrap
             component={NextLink}
             href="/"
@@ -144,7 +144,7 @@ export default function AppSidebar({ drawerWidth }: { drawerWidth: number }) {
             marginTop={2}
             paragraph
             fontWeight={'bold'}
-            color={'GrayText'}
+            color={'#ccc'}
           >
             Note: I would never use this style of flyout menu for such a simple
             navigation! I just wanted to see how to achieve it in MUI.

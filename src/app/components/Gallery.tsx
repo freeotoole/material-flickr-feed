@@ -91,7 +91,7 @@ const Gallery = (props: GalleryProps) => {
           width: '100%',
         }}
       >
-        <Masonry columns={3} spacing={1}>
+        <Masonry columns={3} spacing={2}>
           {photos &&
             photos.map((photo: FlickrImageProps, i: number) => (
               <React.Fragment key={i}>
@@ -124,9 +124,17 @@ const Gallery = (props: GalleryProps) => {
             ))}
         </Masonry>
       </Box>
-      <Box ref={ref} className="mt-4 py-6">
+      <Box ref={ref} p={4} mb={4}>
         {isLastPage ? (
-          <Box sx={{}} className="flex items-center justify-center gap-2">
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyItems: 'center',
+              gap: '.5rem',
+            }}
+            className="flex items-center justify-center gap-2"
+          >
             <SentimentDissatisfiedIcon sx={{ fontSize: 48 }} />
             <Typography variant="h6" component="h6" align="center">
               No more photos here!

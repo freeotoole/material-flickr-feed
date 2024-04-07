@@ -1,16 +1,10 @@
 type Settings = {
-  gap: 'sm' | 'md' | 'lg' | 'xl'
-  columns: 2 | 3 | 4
   siteName: string | null
   siteDescription?: string | null
   colophon?: string | null
   albums: { [key: string]: Album }
   perPage: number
-  gallery?: {
-    title?: string
-    subtitle?: string
-    slug: string
-  }
+  stack: { [key: string]: string }[]
 }
 
 type Album = {
@@ -25,12 +19,15 @@ type Album = {
 const year = new Date().getFullYear()
 
 export const settings: Settings = {
-  gap: 'md',
-  columns: 3,
-  siteName: "Free's Flickr Feed",
+  siteName: "Free's MUI Flickr Feed",
   siteDescription:
     "**FLICKR GALLERY** by [Free O'Toole](https://freeotoole.com)",
   colophon: `**© ${year}** | Built with [Next.js](https://nextjs.org), [Tailwind CSS](https://tailwindcss.com), and the [Flickr API](https://www.flickr.com/services/api).`,
+  stack: [
+    { 'Next.js': 'https://nextjs.org' },
+    { 'Material UI': 'https://mui.com' },
+    { 'Flickr API': 'https://www.flickr.com/services/api' },
+  ],
   albums: {
     analogue: {
       id: '72177720313681808',
@@ -62,10 +59,4 @@ export const settings: Settings = {
     },
   },
   perPage: 12,
-  gallery: {
-    title: 'My latest photos',
-    subtitle:
-      '8-bit gochujang photo booth gatekeep lomo, blog shoreditch tattooed. Celiac actually narwhal listicle, mukbang sus kinfolk pug banjo brunch.',
-    slug: 'gallery',
-  },
 }

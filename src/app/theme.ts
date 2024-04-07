@@ -1,20 +1,22 @@
-"use client";
-import { Space_Grotesk } from "next/font/google";
-import { createTheme, useTheme } from "@mui/material/styles";
+'use client'
+
+import { PaletteMode } from '@mui/material'
 import {
-  cyan,
-  deepPurple,
   amber,
+  cyan,
   deepOrange,
+  deepPurple,
   grey,
-} from "@mui/material/colors";
-import { PaletteMode } from "@mui/material";
+  purple,
+} from '@mui/material/colors'
+import { createTheme, useTheme } from '@mui/material/styles'
+import { Space_Grotesk } from 'next/font/google'
 
 const sans = Space_Grotesk({
-  weight: ["300", "400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 const getDesignTokens = (mode: PaletteMode) => ({
   typography: {
@@ -23,34 +25,40 @@ const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
     mode,
     primary: {
-      ...amber,
-      ...(mode === "dark" && {
-        main: amber[300],
+      ...deepPurple,
+      ...(mode === 'dark' && {
+        main: purple[300],
       }),
     },
-    ...(mode === "dark" && {
+    secondary: {
+      ...cyan,
+      ...(mode === 'dark' && {
+        main: cyan[300],
+      }),
+    },
+    ...(mode === 'dark' && {
       background: {
-        default: grey[900],
-        paper: grey[800],
+        default: '#02001B',
+        paper: '#18103F',
       },
     }),
     text: {
-      ...(mode === "light"
+      ...(mode === 'light'
         ? {
             primary: grey[900],
             secondary: grey[800],
           }
         : {
-            primary: "#fff",
+            primary: '#fff',
             secondary: grey[500],
           }),
     },
   },
-});
+})
 
-const theme = createTheme(getDesignTokens("dark"));
+const theme = createTheme(getDesignTokens('dark'))
 
-export default theme;
+export default theme
 
 /**
 

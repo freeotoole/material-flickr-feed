@@ -27,21 +27,22 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppRouterCacheProvider>
-          <CssBaseline />
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
 
-          <AppSidebar drawerWidth={drawerWidth} />
-          <Box
-            component="main"
-            sx={{
-              flexGrow: 1,
-              bgcolor: 'background.default',
-              p: 3,
-              ml: `${drawerWidth}px`,
-            }}
-          >
-            {children}
-          </Box>
-          {/* <ThemeProvider theme={theme}>{children}</ThemeProvider> */}
+            <AppSidebar drawerWidth={drawerWidth} />
+            <Box
+              component="main"
+              sx={{
+                flexGrow: 1,
+                bgcolor: 'background.default',
+                p: 3,
+                ml: `${drawerWidth}px`,
+              }}
+            >
+              {children}
+            </Box>
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
